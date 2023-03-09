@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+</head>
+<body>
+    <h2>Tournois en cours:</h2>
+    <ul>
+        <% for(const tournament of tournaments) { %>
+        <li><a href="/tournament/<%= tournament.id%>"><span><%= tournament.name%></span></a></li>
+        <% } %>
+    </ul>
+    <h1>Créer un tournoi:</h1>
+    <form action="/tournament" method="post">
+        <label for="name">Nom:</label>
+        <input type="text" name="name" id="name">
+        <button type="submit">Créer le tournoi</button>
+    </form>
+</body>
+</html>

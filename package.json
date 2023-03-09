@@ -1,0 +1,22 @@
+{
+  "name": "projettournois",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tournament.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DorianDom/ProjetTournois.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DorianDom/ProjetTournois/issues"
+  },
+  "homepage": "https://github.com/DorianDom/ProjetTournois#readme",
+  "dependencies": {
+    "ejs": "^3.1.8"
+  }
+}

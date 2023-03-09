@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournoi</title>
+</head>
+
+<body>
+    <h1><%= tournament.name%></h1>
+    <h2>Participants:</h2>
+    <ul>
+        <li>Ana</li>
+        <li>Bob</li>
+        <li>Charlie</li>
+    </ul>
+    <a href="/tournament/<%= tournament.id%>/player/add"><h2>Ajouter un joueur</h2></a>
+    <a href="/tournament/<%= tournament.id%>/start"><h2>Démarrer le tournoi</h2></a>
+    <h2>Poules:</h2>
+    <ul>
+        <li>
+            <a href="/pool">Poule 1</a>
+        </li>
+        <li>
+            <a href="/pool">Poule 2</a>
+        </li>
+    </ul>
+    <h2>Tableaux:</h2>
+    <ul>
+        <li>
+            <a href="/bracket/1">Tableau 1</a>
+        </li>
+        <li>
+            <a href="/bracket/2">tableau 2</a>
+        </li>
+    </ul>
+</body>
+
+</html>
