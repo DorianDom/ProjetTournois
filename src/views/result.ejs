@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saisie Resultat</title>
+</head>
+<body>
+    <h1><%= tournament.name%></h1>
+
+    <a href="/tournament/<%= tournament.id%>"><h2>Retour vers la selection de match</h2></a><br>
+
+    <h2>Saisir Resultat Match</h2><br>
+    <form action="" method="get">
+        <label for="scoreP1">Score du Joueur 1</label><br>
+        <input type="number" name="scoreP1" id="scoreP1"></input><br>
+        <label for="scoreP2">Score du Joueur 2</label><br>
+        <input type="number" name="scoreP2" id="scoreP2"></input><br>
+        <input id="submit" type="submit"></input>
+    </form>
+
+
+</body>
+</html>

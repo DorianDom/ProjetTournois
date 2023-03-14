@@ -29,4 +29,16 @@ app.get("/tournament/:id",(req,res)=>{
     console.log(tournament);
     res.render("tournament",{tournament})
 })
+app.get("/tournament/:id/pool/:nbP",(req,res)=>{
+    console.log(req.params.id);
+    const tournament = tournaments.find((t)=>t.id === req.params.id)
+    console.log(tournament);
+    res.render("pool",{tournaments})
+})
+app.get("/tournament/:id/bracket/:nbB",(req,res)=>{
+    console.log(req.params.id);
+    const tournament = tournaments.find((t)=>t.id === req.params.id)
+    console.log(tournament);
+    res.render("bracket",{tournaments})
+})
 app.listen(4000)
