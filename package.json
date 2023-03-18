@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "tournament.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon -e js,ejs src/server.js",
     "test": "npx mocha tests"
@@ -18,7 +19,7 @@
   },
   "homepage": "https://github.com/DorianDom/ProjetTournois#readme",
   "dependencies": {
+    "chai": "^4.3.7",
     "ejs": "^3.1.8"
   }
-  
 }
