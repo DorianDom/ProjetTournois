@@ -5,14 +5,22 @@ export const createPools = (players) => {
         return p1
     }
     else if(players.length=6){
-        pool=[players[0,1,2],players[3,4,5]]
+        let p1=[players[0],players[1],players[2]]
+        let p2=[players[3],players[4],players[5]]
+        pool=[p1,p2]
         return pool
     }
     else if(players.length=7){
-        return pool[players[0,1,2,3],players[4,5,6]]
+        let p1=[players[0],players[1],players[2]]
+        let p2=[players[3],players[4],players[5],players[6]]
+        pool=[p1,p2]
+        return pool
     }
     else if(players.length=8){
-        return pool[players[0,1,2,3],players[4,5,6,7]]
+        let p1=[players[0],players[1],players[2],players[3]]
+        let p2=[players[4],players[5],players[6],players[7]]
+        pool=[p1,p2]
+        return pool
     }
     else return null
 }
