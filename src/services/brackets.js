@@ -1,14 +1,25 @@
 import { writeFile, readFile} from 'node:fs/promises'
+import { createMatch,getLoser } from './matchs.js'
 
 export const createBracket = (players) => {
     
     const bracket = { rounds: [{ name: "final", matches: [] }] }
-    for (let index = 0; index < players.length; index += 2) {
-        const participants = []
-        participants.push(players[index]);
-        participants.push(players[index+1]);
-        bracket.rounds[0].matches.push(createMatch(participants,null,null))
+    if(players.length%2==0){
+        for (let index = 0; index < players.length; index += 2) {
+            const participants = []
+            participants.push(players[index]);
+            participants.push(players[index+1]);
+            bracket.rounds[0].matches.push(createMatch(participants,null,null))
+        }
+    }else{
+        for (let index = 0; index < players.length+1; index += 2) {
+            const participants = []
+            participants.push(players[index]);
+            participants.push(players[index+1]);
+            bracket.rounds[0].matches.push(createMatch(participants,null,null))
+        }
     }
+    
     return bracket
 }
 

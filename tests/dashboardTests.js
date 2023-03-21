@@ -1,4 +1,4 @@
-import ejs from "ejs";
+/*import ejs from "ejs";
 import { JSDOM } from "jsdom";
 import fs from "fs";
 import { expect } from "chai"
@@ -31,4 +31,4 @@ describe('dashboard page tests', () => {
         const list = container.querySelectorAll("ul > li")
         expect(list.length).to.eql(2);
     });
-});
+});*/

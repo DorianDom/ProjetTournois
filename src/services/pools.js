@@ -1,5 +1,5 @@
 export const createPools = (players) => {
-    const playersPerPool = 4;
+    const playersPerPool = 5;
     const numPools = Math.ceil(players.length / playersPerPool);
     const pools = [];
     for (let i = 0; i < numPools; i++) {

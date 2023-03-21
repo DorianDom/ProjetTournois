@@ -17,10 +17,10 @@ describe('ranker tests', () => {
         const rankAna = ranking.find((r) => r.id === "J1")
         expect(rankAna).to.be.ok
         expect(rankAna.position).to.be.a('Number')
-        expect(rankAna.position, "player position").to.eql(1)
+        expect(rankAna.position, "player position Ana").to.eql(1)
         const rankBob = ranking.find((r) => r.id === "J2")
         expect(rankBob).to.be.ok
         expect(rankBob.position).to.be.a('Number')
-        expect(rankBob.position, "player position").to.eql(1)
+        expect(rankBob.position, "player position Bob").to.eql(1)
     });
 });

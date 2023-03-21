@@ -30,6 +30,16 @@ export const createMatch = (participants, location, date) => {
     }
 }
 
+export const setLocationMatch = (match,location) => {
+    match.location=location;
+    return match
+}
+
+export const setDateMatch = (match,date) => {
+    match.date=date;
+    return match
+}
+
 export const createSet = (idx, id1, value1,id2,value2,type="classic",tie1=null,tie2=null) => {
     return {
         idx, type, scores: [
