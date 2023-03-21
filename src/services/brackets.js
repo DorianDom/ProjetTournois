@@ -3,6 +3,8 @@ import { createMatch,getLoser } from './matchs.js'
 
 export const createBracket = (players) => {
     
+    nbJ=players.length;
+    
     const bracket = { rounds: [{ name: "final", matches: [] }] }
     if(players.length%2==0){
         for (let index = 0; index < players.length; index += 2) {
