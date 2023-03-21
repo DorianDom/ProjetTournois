@@ -1,7 +1,6 @@
 {
   "name": "projettournois",
   "version": "1.0.0",
-  "description": "",
   "main": "tournament.js",
   "type": "module",
   "scripts": {
@@ -22,5 +21,11 @@
     "chai": "^4.3.7",
     "ejs": "^3.1.8",
     "express": "^4.18.2"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
 }
