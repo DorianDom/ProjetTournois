@@ -33,6 +33,14 @@ export async function showTournament (req,res){
     res.render("tournament",{tournament})
 }
 
+export async function showAddPlayer(){
+    console.log(req.params.id);
+    const tournaments = await loadTournaments()
+    const tournament = tournaments.find((t)=>t.id === req.params.id)
+    console.log(tournament);
+    res.render("addPlayers",{tournament})
+}
+
 export async function addPlayer (req,res){
 
     const player = await playerBodySchema.validate(req.body)

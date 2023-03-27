@@ -1,6 +1,6 @@
 import express from 'express'
 import { randomUUID } from 'node:crypto'
-import { addPlayer, addTournament, showTournament, showTournaments, startTournament } from './controllers/tournament.js'
+import { addPlayer, addTournament, showAddPlayer, showTournament, showTournaments, startTournament } from './controllers/tournament.js'
 import { playerBodySchema, tournamentSchema } from './models/models.js'
 
 const app = express()
@@ -11,6 +11,7 @@ app.set('views','src/views')
 app.get("/",showTournaments)
 app.post("/tournament",addTournament)
 app.get("/tournament/:id",showTournament)
-app.post("/tournament/:id/player",addPlayer)
+app.get("/tournament/:id/player",showAddPlayer)
+app.post("/tournament/:id/player/add",addPlayer)
 app.all("/tournemant/:id/start",startTournament)
 app.listen(4000)
