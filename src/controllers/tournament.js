@@ -77,3 +77,7 @@ export async function showMatch(req,res){
     console.log(tournament);
     res.render("match",{tournament})
 }
+
+export async function addMatch(req,res){
+
+}
