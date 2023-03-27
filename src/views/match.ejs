@@ -10,7 +10,7 @@
     <h2><%= tournament.name%></h2>
 
     <h1>Saisi Match :</h1>
-    <form action="" method="post">
+    <form action="/tournament/<%=tournament.id%>/match/add" method="post">
         <label for="J1">Joueur 1 :</label>
         <input type="number" name="J1" id="J1">
         <label for="J2">Joueur 2 :</label>
