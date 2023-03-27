@@ -35,7 +35,7 @@ export async function showTournament (req,res){
     res.render("tournament",{tournament})
 }
 
-export async function showAddPlayer(){
+export async function showAddPlayer(req,res){
     console.log(req.params.id);
     const tournaments = await loadTournaments()
     const tournament = tournaments.find((t)=>t.id === req.params.id)
@@ -43,7 +43,7 @@ export async function showAddPlayer(){
     res.render("addPlayers",{tournament})
 }
 
-export async function showPlayer(){
+export async function showPlayer(req,res){
     console.log(req.params.id);
     const tournaments = await loadTournaments()
     const tournament = tournaments.find((t)=>t.id === req.params.id)
@@ -68,4 +68,12 @@ export async function addPlayer (req,res){
 export async function startTournament(req,res){
     createPools(tournament.player)
     res.send("tournoi démarré (v2)")
+}
+
+export async function showMatch(req,res){
+    console.log(req.params.id);
+    const tournaments = await loadTournaments()
+    const tournament = tournaments.find((t)=>t.id === req.params.id)
+    console.log(tournament);
+    res.render("match",{tournament})
 }
