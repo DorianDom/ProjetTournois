@@ -12,10 +12,10 @@
     <h1><%= tournament.name%></h1>
     <h2>Participants:</h2>
     <ul>
-        <%= 
-        <li>Ana</li>
-        <li>Bob</li>
-        <li>Charlie</li>
+
+        <% for(const player of tournament.players) { %>
+            <li><%= player.name%></li>
+        <% } %>
         
     </ul>
     <a href="/tournament/<%= tournament.id%>/player/add"><h2>Ajouter un joueur</h2></a>
