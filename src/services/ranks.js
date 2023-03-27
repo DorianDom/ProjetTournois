@@ -1,3 +1,4 @@
+import { stat } from "fs"
 import { getLoser, getWinner } from "./matchs.js"
 
 export const getScoreStats = (participant, match) => {
@@ -9,6 +10,8 @@ export const getScoreStats = (participant, match) => {
     return stats
 }
 
-export const createRanking = (matches) => {
+export const createRanking = (matches,participants) => {
+    const stat=getScoreStats(participants,matches[0]);
+
     return [{ id: matches[0].participants[0].id, position: 2 }, { id: matches[0].participants[1].id, position: 1 }]
 }
