@@ -2,8 +2,9 @@ import { writeFile, readFile} from 'node:fs/promises'
 import { createMatch,getLoser } from './matchs.js'
 
 export const createBracket = (players) => {
-    
+    let nbJ=null
     nbJ=players.length;
+    
     
     const bracket = { rounds: [{ name: "final", matches: [] }] }
     if(players.length%2==0){
