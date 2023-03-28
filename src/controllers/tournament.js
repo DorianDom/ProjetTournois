@@ -55,8 +55,11 @@ export async function showPlayer(req,res){
 
 
 export async function addPlayer (req,res){
-
-    const player = await playerBodySchema.validate(req.body)
+    let player=req.body
+    if(Array.isArray(player.slots)){
+        player.slots=player.slots.join(",")
+    }
+    player = await playerBodySchema.validate(player)
     player.id = randomUUID()
     const tournaments = await loadTournaments()
     const tournament = tournaments.find((t)=>t.id === req.params.id)
