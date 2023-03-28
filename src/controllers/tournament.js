@@ -1,4 +1,4 @@
-import { playerBodySchema, tournamentSchema } from "../models/models.js"
+import { playerBodySchema, tournamentSchema,poolsSchema } from "../models/models.js"
 import { randomUUID } from 'node:crypto'
 import { loadTournaments, saveTournaments } from "../services/tournament.js"
 import { createPools } from "../services/pools.js"
@@ -9,6 +9,7 @@ export async function addTournament(req,res){
         const tournament = await tournamentSchema.validate(req.body)
     tournament.id = randomUUID()
     tournament.players = []
+    tournament.pools = []
     const tournaments = await loadTournaments()
     tournaments.push(tournament)
     saveTournaments(tournaments)
@@ -67,18 +68,43 @@ export async function addPlayer (req,res){
     res.redirect("/tournament/"+req.params.id)
 }
 
+
+
+
 export async function startTournament(req,res){
     const tournaments = await loadTournaments()
     const tournament = tournaments.find((t)=>t.id === req.params.id)
-    createPools(Array.isArray(tournament.player))
+    let pool = createPools(Array.isArray(tournament.players))
+    if(Array.isArray(pool)){
+        console.log(pool)
+        pool=pool.join(",")
+    }
+    console.log(pool)
+    pool = await poolsSchema.validate(pool)
+    tournament.pools.id = randomUUID()
+    tournament.pools.push(pool)
+    console.log(pool)
+    
+    saveTournaments(tournaments)
     console.log("tournoi démarré (v2)")
     res.redirect("/tournament/"+req.params.id)
 }
+
+
+
 
 export async function showMatch(req,res){
     console.log(req.params.id);
     const tournaments = await loadTournaments()
     const tournament = tournaments.find((t)=>t.id === req.params.id)
+    console.log(tournament);
+    res.render("matchs",{tournament})
+}
+
+export async function showPool(req,res){
+    const tournaments = await loadTournaments()
+    const tournament = tournaments.find((t)=>t.id === req.params.id)
+    const player= tournament.players.find((t)=>t.id===req.params.idP)
     console.log(tournament);
     res.render("matchs",{tournament})
 }

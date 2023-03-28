@@ -23,6 +23,9 @@
     <h2>Poules:</h2>
     <ul>
 
+        <% for(const pool of tournament.pools) { %>
+            <a href="/tournament/<%= tournament.id%>/player/<%= pool.id%>"><li><%= player.name%></li></a>
+        <% } %>
         <li>
             <a href="/pool/1">Poule 1</a>
         </li>

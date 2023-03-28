@@ -19,3 +19,7 @@ export const playerBodySchema = object({
     name : string().required().max(40),
     slots : string().required()
 })
+
+export const poolsSchema = object({
+    pool : string().required()
+}) 
