@@ -14,7 +14,7 @@
     <ul>
 
         <% for(const player of tournament.players) { %>
-            <li><%= player.name%></li>
+            <a href="/tournament/<%= tournament.id%>/player/<%= player.id%>"><li><%= player.name%></li></a>
         <% } %>
         
     </ul>

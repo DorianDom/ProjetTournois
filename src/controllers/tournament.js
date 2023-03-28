@@ -69,8 +69,11 @@ export async function addPlayer (req,res){
 }
 
 export async function startTournament(req,res){
-    createPools(tournament.player)
-    res.send("tournoi démarré (v2)")
+    const tournaments = await loadTournaments()
+    const tournament = tournaments.find((t)=>t.id === req.params.id)
+    createPools(Array.isArray(tournament.player))
+    console.log("tournoi démarré (v2)")
+    res.redirect("/tournament/"+req.params.id)
 }
 
 export async function showMatch(req,res){
