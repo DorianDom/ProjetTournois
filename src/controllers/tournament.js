@@ -32,7 +32,7 @@ export async function showTournament (req,res){
     const tournaments = await loadTournaments()
     const tournament = tournaments.find((t)=>t.id === req.params.id)
     console.log(tournament);
-    res.render("tournament",{tournament})
+    res.render("tournaments",{tournament})
 }
 
 export async function showAddPlayer(req,res){
@@ -75,7 +75,7 @@ export async function showMatch(req,res){
     const tournaments = await loadTournaments()
     const tournament = tournaments.find((t)=>t.id === req.params.id)
     console.log(tournament);
-    res.render("match",{tournament})
+    res.render("matchs",{tournament})
 }
 
 export async function addMatch(req,res){
