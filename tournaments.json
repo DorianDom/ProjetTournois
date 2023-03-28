@@ -1,1 +1,65 @@
-[{"name":"Tarbes 2023 (20 équipes max)","id":"4b28ed1c-66f6-4320-84b7-b424988b722f","players":[{"name":"Rémy","slots":"lundi,mardi","id":"f790cf48-7d8c-42b6-ba1e-c7b9caa09046"},{"name":"joueur 1","slots":"monday","id":"38c647b2-739d-4668-9adc-1e935aaa1f0b"},{"name":"joueur 2","slots":"wednesday","id":"78bc788f-4ae2-41b5-8661-0d0593b7174c"},{"name":"joueur 3","slots":"monday,tuesday,wednesday","id":"5dfaf13b-dfb5-42d6-9011-98629e170e7a"}]},{"name":"test","id":"91ca32e1-2258-4bf3-a3e7-3b4bd445c3c1","players":[{"name":"joueur 1","slots":"monday,tuesday,wednesday,saturday","id":"0b7e9a03-877d-4e5c-a27c-c2bc8b22a1c3"},{"name":"tournois 2","slots":"monday,saturday","id":"4e45c559-670a-46dc-807f-93efece72a7c"},{"name":"joueur 3","slots":"tuesday,wednesday,thursday,saturday","id":"9a115592-5d52-4a8e-a72c-771da1ebbbc2"}],"pools":[]}]
+[
+    {
+        "name": "un tournois",
+        "id": "ca17c6f2-1a67-4620-8ff8-da055faec833",
+        "players": [
+            {
+                "name": "joueur 1",
+                "slots": "monday",
+                "id": "0c5a355d-3867-4f6d-bd17-1b5f7fc9e9f2"
+            },
+            {
+                "name": "joueur 2",
+                "slots": "monday",
+                "id": "b1856aaf-d283-46fe-bef8-372a98432915"
+            }
+        ],
+        "pools": [
+            [
+                {
+                    "name": "joueur 1",
+                    "slots": "monday",
+                    "id": "0c5a355d-3867-4f6d-bd17-1b5f7fc9e9f2"
+                },
+                {
+                    "name": "joueur 2",
+                    "slots": "monday",
+                    "id": "b1856aaf-d283-46fe-bef8-372a98432915"
+                }
+            ]
+        ]
+    },
+    {
+        "name": "tournois 2",
+        "id": "b296d313-dafc-4ce3-9463-9a4ef22a8c32",
+        "players": [
+            {
+                "name": "joueur 1",
+                "slots": "monday",
+                "id": "de2ff5db-d354-4657-9a6f-d104fed4c2ca"
+            },
+            {
+                "name": "joueur 2",
+                "slots": "monday",
+                "id": "7281b901-5c98-4aac-a5c3-9a9e5034a1b5"
+            }
+        ],
+        "pools": [
+            {
+                "players": [
+                    {
+                        "name": "joueur 1",
+                        "slots": "monday",
+                        "id": "de2ff5db-d354-4657-9a6f-d104fed4c2ca"
+                    },
+                    {
+                        "name": "joueur 2",
+                        "slots": "monday",
+                        "id": "7281b901-5c98-4aac-a5c3-9a9e5034a1b5"
+                    }
+                ],
+                "id": "25949118-1840-49af-bb6a-678e9244c379"
+            }
+        ]
+    }
+]

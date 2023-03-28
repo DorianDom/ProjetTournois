@@ -74,17 +74,11 @@ export async function addPlayer (req,res){
 export async function startTournament(req,res){
     const tournaments = await loadTournaments()
     const tournament = tournaments.find((t)=>t.id === req.params.id)
-    let pool = createPools(Array.isArray(tournament.players))
-    if(Array.isArray(pool)){
-        console.log(pool)
-        pool=pool.join(",")
+    let pools = createPools(tournament.players)
+    tournament.pools=[]
+    for(const pool of pools){
+        tournament.pools.push({players:pool,id:randomUUID()})
     }
-    console.log(pool)
-    pool = await poolsSchema.validate(pool)
-    tournament.pools.id = randomUUID()
-    tournament.pools.push(pool)
-    console.log(pool)
-    
     saveTournaments(tournaments)
     console.log("tournoi démarré (v2)")
     res.redirect("/tournament/"+req.params.id)
