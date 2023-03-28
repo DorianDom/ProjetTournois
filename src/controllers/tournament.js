@@ -2,7 +2,6 @@ import { playerBodySchema, tournamentSchema } from "../models/models.js"
 import { randomUUID } from 'node:crypto'
 import { loadTournaments, saveTournaments } from "../services/tournament.js"
 import { createPools } from "../services/pools.js"
-import { loadPlayer } from "../services/player.js"
 
 export async function addTournament(req,res){
 
@@ -47,10 +46,10 @@ export async function showPlayer(req,res){
     console.log(req.params.id);
     const tournaments = await loadTournaments()
     const tournament = tournaments.find((t)=>t.id === req.params.id)
-    const players= await loadPlayer(tournament)
-    const player= players.find((t)=>t.id===req.params.idP)
+    const player= tournament.players.find((t)=>t.id===req.params.idP)
     console.log(tournament);
-    res.render("player",{tournament},{player})
+    console.log(player);
+    res.render("player",{tournament,player})
 }
 
 
